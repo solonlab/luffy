@@ -18,14 +18,15 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.codehaus.groovy</groupId>
+            <groupId>org.apache.groovy</groupId>
             <artifactId>groovy</artifactId>
-            <version>3.0.1</version>
+            <version>4.0.27</version>
         </dependency>
+
         <dependency>
-            <groupId>org.codehaus.groovy</groupId>
+            <groupId>org.apache.groovy</groupId>
             <artifactId>groovy-jsr223</artifactId>
-            <version>3.0.1</version>
+            <version>4.0.27</version>
         </dependency>
 
         <dependency>
