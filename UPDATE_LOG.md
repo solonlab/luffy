@@ -1,3 +1,9 @@
+
+### v1.9.6
+
+* jruby 升为 10.0.0.1
+* groovy 升为 org.apache.groovy 4.0.27 (groovy 3.0)
+
 #### v1.9.5
 
 * 优化 js 执行器，取消对 ScriptObjectMirror 的直接引用
