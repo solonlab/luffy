@@ -3,8 +3,9 @@
 
 * jruby 升为 10.0.0.1
 * groovy 升为 org.apache.groovy 4.0.27 (groovy 3.0)
+* jython 升为 2.7.4
 
-#### v1.9.5
+#### v1.9.6
 
 * 优化 js 执行器，取消对 ScriptObjectMirror 的直接引用
 * 修复 luffy.executor.s.python 启动会出错的问题（引用了错误的 ScriptObjectMirror）
