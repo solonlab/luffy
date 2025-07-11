@@ -1,9 +1,7 @@
 
 ### v1.9.6
 
-* jruby 升为 10.0.0.1
 * groovy 升为 org.apache.groovy 4.0.27 (groovy 3.0)
-* jython 升为 2.7.4
 
 #### v1.9.6
 
