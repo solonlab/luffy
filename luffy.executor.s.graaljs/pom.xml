@@ -19,7 +19,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <graalvm.version>19.3.0</graalvm.version>
+        <graalvm.version>19.3.6</graalvm.version>
     </properties>
 
     <dependencies>

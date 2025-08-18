@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>3.4.0</version>
+        <version>3.5.0</version>
         <relativePath />
     </parent>
 
@@ -43,7 +43,7 @@
     </scm>
 
     <properties>
-        <revision>1.9.6</revision>
+        <revision>1.9.7</revision>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
