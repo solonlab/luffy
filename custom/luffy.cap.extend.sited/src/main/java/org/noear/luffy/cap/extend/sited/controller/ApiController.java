@@ -5,7 +5,7 @@ import org.noear.luffy.cap.extend.sited.dao.Utils;
 import org.noear.luffy.cap.extend.sited.model.SiteModel;
 import org.noear.luffy.cap.extend.sited.utils.Datetime;
 import org.noear.luffy.cap.extend.sited.utils.TextUtils;
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.core.handle.Context;

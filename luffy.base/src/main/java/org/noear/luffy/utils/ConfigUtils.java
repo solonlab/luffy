@@ -1,6 +1,6 @@
 package org.noear.luffy.utils;
 
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.Utils;
 import org.yaml.snakeyaml.Yaml;
 
@@ -42,7 +42,7 @@ public class ConfigUtils {
                 Yaml yaml = new Yaml();
                 Object tmp = yaml.load(new StringReader(text));
 
-                return ONode.loadObj(tmp);
+                return ONode.ofBean(tmp);
             }
         }
 
@@ -72,7 +72,7 @@ public class ConfigUtils {
                                 tmp = tmp.getOrNew(Integer.parseInt(s1.substring(il + 1, ir)));
                             }
                         }
-                        tmp.val(v);
+                        tmp.setValue(v);
                     }
                 });
 
@@ -80,6 +80,6 @@ public class ConfigUtils {
             }
         }
 
-        return ONode.loadStr(text);
+        return ONode.ofJson(text);
     }
 }

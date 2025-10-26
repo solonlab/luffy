@@ -1,6 +1,6 @@
 package org.noear.luffy.executor.s.lua;
 
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.Solon;;
 import org.noear.solon.core.handle.Context;
 import org.noear.luffy.executor.IJtExecutor;
@@ -69,7 +69,7 @@ public class LuaJtExecutor implements IJtExecutor {
             sb.append("require 'org.luaj.vm2.lib.DebugLib'\n\n");
 
 //            sb.append("Context = luajava.bindClass('org.noear.solon.core.handle.Context')\n");
-//            sb.append("ONode = luajava.bindClass('org.noear.snack.ONode')\n");
+//            sb.append("ONode = luajava.bindClass('org.noear.snack4.ONode')\n");
 
             sb.append("\n");
             sb.append("__global = {lib={},lib_new={}}\n\n");
@@ -180,7 +180,7 @@ public class LuaJtExecutor implements IJtExecutor {
                     return tmp.toString();
                 }else{
                     Object obj = LuaUtil.luaToObj(tmp);
-                    return ONode.loadObj(obj).toJson();
+                    return ONode.ofBean(obj).toJson();
                 }
             }else{
                 return LuaUtil.luaToObj(tmp);

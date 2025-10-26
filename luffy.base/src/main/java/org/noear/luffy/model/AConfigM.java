@@ -1,7 +1,7 @@
 package org.noear.luffy.model;
 
 import org.noear.luffy.utils.DsUtils;
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.core.NvMap;
 import org.noear.luffy.utils.ConfigUtils;
 import org.noear.luffy.utils.TextUtils;

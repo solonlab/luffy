@@ -1,6 +1,5 @@
 package org.noear.luffy.dso;
 
-import org.noear.snack.core.exts.ThData;
 import org.noear.solon.annotation.Note;
 
 import java.util.HashMap;
@@ -10,7 +9,8 @@ import java.util.Map;
 public class JtMsg {
     public static final JtMsg g  = new JtMsg();
 
-    static ThData<Map<String,Object>> th_map= new ThData<>(()->new HashMap<>());
+    static ThreadLocal<Map<String,Object>> th_map= ThreadLocal.withInitial(HashMap::new);
+
 
     @Note("转发消息")
     public boolean forward(String topic, Object content, String topic_source) throws Exception{

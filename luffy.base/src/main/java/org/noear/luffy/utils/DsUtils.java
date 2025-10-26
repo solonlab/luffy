@@ -1,9 +1,7 @@
 package org.noear.luffy.utils;
 
 import com.zaxxer.hikari.HikariDataSource;
-import org.noear.solon.core.util.ConvertUtil;
-import org.noear.solon.core.wrap.ClassWrap;
-import org.noear.solon.core.wrap.FieldWrap;
+import org.noear.solon.Utils;
 import org.noear.wood.DbContext;
 import org.noear.wood.DbDataSource;
 
@@ -38,19 +36,13 @@ public class DsUtils {
             return null;
         }
 
-        String username = prop.getProperty("username");
-        String password = prop.getProperty("password");
-        String driverClassName = prop.getProperty("driverClassName");
-
         if (pool) {
             HikariDataSource source = new HikariDataSource();
 
-            for (FieldWrap fw : ClassWrap.get(HikariDataSource.class).getAllFieldWraps()) {
-                String valStr = prop.getProperty(fw.getName());
-                if (TextUtils.isNotEmpty(valStr)) {
-                    Object val = ConvertUtil.to(fw.getType(), valStr);
-                    fw.setValue(source, val);
-                }
+            Utils.injectProperties(source, prop);
+
+            if (TextUtils.isNotEmpty(url)) {
+                source.setJdbcUrl(url);
             }
 
             if (TextUtils.isNotEmpty(url)) {
@@ -59,6 +51,10 @@ public class DsUtils {
 
             return source;
         } else {
+            String driverClassName = prop.getProperty("driverClassName");
+            String username = prop.getProperty("username");
+            String password = prop.getProperty("password");
+
             if (TextUtils.isNotEmpty(driverClassName)) {
                 try {
                     Class.forName(driverClassName);

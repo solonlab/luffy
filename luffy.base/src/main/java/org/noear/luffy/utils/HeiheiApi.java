@@ -1,7 +1,7 @@
 package org.noear.luffy.utils;
 
 
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.luffy.dso.LogLevel;
 import org.noear.luffy.dso.LogUtil;
 
@@ -21,15 +21,15 @@ public class HeiheiApi {
             return null;
         }
 
-        ONode data = new ONode().build((d) -> {
-            d.getOrNew("platform").val("all");
+        ONode data = new ONode().then((d) -> {
+            d.getOrNew("platform").setValue("all");
 
             d.getOrNew("audience").getOrNew("alias").addAll(alias);
 
             d.getOrNew("options")
                     .set("apns_production", true);
 
-            d.getOrNew("notification").build(n -> {
+            d.getOrNew("notification").then(n -> {
                 n.getOrNew("android")
                         .set("alert", text);
 
@@ -39,7 +39,7 @@ public class HeiheiApi {
                         .set("sound", "happy");
             });
 
-            d.getOrNew("message").build(n -> {
+            d.getOrNew("message").then(n -> {
                 n.set("msg_content", text);
             });
         });

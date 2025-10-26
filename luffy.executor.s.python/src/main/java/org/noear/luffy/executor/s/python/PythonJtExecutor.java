@@ -1,6 +1,6 @@
 package org.noear.luffy.executor.s.python;
 
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.Solon;;
 import org.noear.solon.core.handle.Context;
 import org.noear.luffy.dso.CallUtil;
@@ -150,7 +150,7 @@ public class PythonJtExecutor implements IJtExecutor {
                 if (tmp instanceof Number || tmp instanceof String || tmp instanceof Boolean){
                     return tmp.toString();
                 }else{
-                    return ONode.loadObj(tmp).toJson();
+                    return ONode.ofBean(tmp).toJson();
                 }
             }else{
                 return tmp;

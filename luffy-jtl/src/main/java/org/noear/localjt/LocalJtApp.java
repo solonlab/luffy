@@ -1,8 +1,8 @@
 package org.noear.localjt;
 
 import org.noear.localjt.dso.WebShell;
-import org.noear.snack.core.Options;
-import org.noear.snack.core.Feature;
+import org.noear.snack4.Options;
+import org.noear.snack4.Feature;
 import org.noear.solon.Solon;
 import org.noear.luffy.Luffy;
 import org.noear.luffy.dso.JtUtilEx;
@@ -25,11 +25,11 @@ public class LocalJtApp {
     public static String plugin_add;
 
     public static void main(String[] args) {
-        Options.features_serialize = Feature.of(
-                Feature.OrderedField,
-                Feature.BrowserCompatible,
-                Feature.WriteClassName,
-                Feature.QuoteFieldNames);
+//        Options.features_serialize = Feature.of(
+//                Feature.OrderedField,
+//                Feature.BrowserCompatible,
+//                Feature.WriteClassName,
+//                Feature.QuoteFieldNames);
 
         WoodConfig.onException((cmd, err) -> {
             System.out.println(cmd.toSqlString());

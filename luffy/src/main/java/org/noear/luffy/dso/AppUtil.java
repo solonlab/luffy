@@ -1,6 +1,6 @@
 package org.noear.luffy.dso;
 
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.luffy.Config;
 import org.noear.luffy.Luffy;
 import org.noear.luffy.event.http.AppHandler;

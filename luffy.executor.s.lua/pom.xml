@@ -30,7 +30,7 @@
         </dependency>
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>snack3</artifactId>
+            <artifactId>snack4</artifactId>
             <scope>provided</scope>
         </dependency>
 

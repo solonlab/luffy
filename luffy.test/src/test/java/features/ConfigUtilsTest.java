@@ -2,7 +2,7 @@ package features;
 
 import org.junit.Test;
 import org.noear.luffy.utils.ConfigUtils;
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 
 import java.util.Properties;
 
@@ -63,7 +63,7 @@ public class ConfigUtilsTest {
         System.out.println(node.toJson());
 
         assert node.select("app.id").getString().equals("speech");
-        assert node.select("knowledge.init.knowledgeTitles[1].kdInfos").count()==3;
+        assert node.select("knowledge.init.knowledgeTitles[1].kdInfos").size()==3;
     }
 
     @Test
@@ -107,6 +107,6 @@ public class ConfigUtilsTest {
         System.out.println(node.toJson());
 
         assert node.select("app.id").getString().equals("speech");
-        assert node.select("knowledge.init.knowledgeTitles[1].kdInfos").count()==3;
+        assert node.select("knowledge.init.knowledgeTitles[1].kdInfos").size()==3;
     }
 }

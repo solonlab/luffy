@@ -5,7 +5,7 @@ import okhttp3.internal.Util;
 import okio.BufferedSink;
 import okio.Okio;
 import okio.Source;
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.Solon;
 import org.noear.solon.annotation.Note;
 import org.noear.wood.cache.ICacheServiceEx;
@@ -317,7 +317,7 @@ public class HttpUtils {
             if (c != null) {
                 String url_key = _url;
                 if(_form != null) {
-                    url_key = EncryptUtils.md5(_url + ONode.stringify(_form));
+                    url_key = EncryptUtils.md5(_url + ONode.serialize(_form));
                 }
 
                 return c.getBy(_cache, url_key, (uc) -> execAsBodyDo(mothod));

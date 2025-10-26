@@ -3,7 +3,7 @@ package org.noear.luffy.dso;
 import org.noear.luffy.executor.ExecutorFactory;
 import org.noear.luffy.model.AFileModel;
 import org.noear.luffy.utils.GzipUtils;
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.Solon;;
 import org.noear.luffy.Config;
 import org.noear.luffy.utils.Base64Utils;
@@ -276,7 +276,7 @@ public class PluginUtil {
             json = GzipUtils.unGZip(json);
         }
 
-        ONode data = ONode.load(json);
+        ONode data = ONode.ofJson(json);
         if (data.get("code").getInt() != 1) {
             return false;
         }
@@ -415,7 +415,7 @@ public class PluginUtil {
 
         //3.业务表结构
         if(p_table.isObject()) {
-            for (ONode n : p_table.obj().values()) {
+            for (ONode n : p_table.getObjectUnsafe().values()) {
                 String v = n.getString();
                 v = "CREATE TABLE IF NOT EXISTS " + Base64Utils.decode(v).substring(12);
                 db().exe(v);

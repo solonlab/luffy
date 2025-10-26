@@ -34,6 +34,12 @@
         <!-- JSON 框架 -->
         <dependency>
             <groupId>org.noear</groupId>
+            <artifactId>snack4</artifactId>
+        </dependency>
+
+        <!-- 兼容旧包 -->
+        <dependency>
+            <groupId>org.noear</groupId>
             <artifactId>snack3</artifactId>
         </dependency>
 

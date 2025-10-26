@@ -1,7 +1,7 @@
 package org.noear.luffy.executor.s.ruby;
 
 import org.noear.luffy.utils.*;
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.Solon;;
 import org.noear.solon.core.handle.Context;
 import org.noear.luffy.executor.IJtExecutor;
@@ -187,7 +187,7 @@ public class RubyJtExecutor implements IJtExecutor {
                 if (tmp instanceof Number || tmp instanceof String || tmp instanceof Boolean){
                     return tmp.toString();
                 }else{
-                    return ONode.loadObj(tmp).toJson();
+                    return ONode.ofBean(tmp).toJson();
                 }
             }else{
                 return tmp;

@@ -3,7 +3,7 @@ package org.noear.luffy.executor.s.nashorn;
 import org.noear.luffy.dso.JtFun;
 import org.noear.luffy.executor.ExecutorFactory;
 import org.noear.luffy.model.AFileModel;
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.core.handle.Context;
 
 import java.nio.file.Paths;

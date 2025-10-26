@@ -1,6 +1,6 @@
 package org.noear.luffy.utils;
 
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,6 +60,6 @@ public class RuntimeStatus {
     public List<Map<String, Object>> memoryPools = new ArrayList<>();
 
     public String toJson() {
-        return ONode.stringify(this);
+        return ONode.serialize(this);
     }
 }

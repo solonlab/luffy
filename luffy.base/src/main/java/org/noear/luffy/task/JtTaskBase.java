@@ -1,6 +1,6 @@
 package org.noear.luffy.task;
 
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.Utils;
 import org.noear.luffy.JtConfig;
 import org.noear.luffy.dso.*;
@@ -49,7 +49,7 @@ public abstract class JtTaskBase implements IJtTask {
                     cfg_str = cfg_str.trim();
 
                     if (cfg_str.startsWith("{")) {
-                        _node_cfg = ONode.load(cfg_str);
+                        _node_cfg = ONode.ofJson(cfg_str);
                     }
                 }
             } catch (Throwable ex) {
@@ -69,13 +69,13 @@ public abstract class JtTaskBase implements IJtTask {
             return false;
         }
 
-        if (cfg.contains("task") && cfg.get("task").getString().indexOf(getName()) < 0) {
+        if (cfg.hasKey("task") && cfg.get("task").getString().indexOf(getName()) < 0) {
             _interval = 1000 * 60;
             LogUtil.log(getName(), LogLevel.TRACE, JtUtil.g.localAddr() + "::is not enabled");
             return false;
         }
 
-        if (cfg.contains("event") && cfg.get("event").getString().indexOf(getName()) < 0) {
+        if (cfg.hasKey("event") && cfg.get("event").getString().indexOf(getName()) < 0) {
             _interval = 1000 * 60;
             LogUtil.log(getName(), LogLevel.TRACE, JtUtil.g.localAddr() + "::is not enabled");
             return false;
