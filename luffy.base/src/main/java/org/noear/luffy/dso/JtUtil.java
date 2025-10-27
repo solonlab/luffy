@@ -2,7 +2,9 @@ package org.noear.luffy.dso;
 
 import org.noear.okldap.LdapClient;
 import org.noear.okldap.LdapSession;
+import org.noear.snack4.Feature;
 import org.noear.snack4.ONode;
+import org.noear.snack4.Options;
 import org.noear.solon.Solon;
 import org.noear.solon.Utils;
 import org.noear.solon.annotation.Note;
@@ -205,7 +207,7 @@ public class JtUtil {
 
 
     @Note("执行 PING 操作")
-    public void ping(String addrs) throws Exception{
+    public void ping(String addrs) throws Exception {
         PingUtils.ping(addrs);
     }
 
@@ -366,12 +368,12 @@ public class JtUtil {
      * base64
      */
     @Note("JsonD编码")
-    public String jsondEncode(String table, List data) throws IOException{
+    public String jsondEncode(String table, List data) throws IOException {
         return JsondUtils.encode(table, data);
     }
 
     @Note("JsonD解码")
-    public String jsondDecode(String jsond) throws IOException{
+    public String jsondDecode(String jsond) throws IOException {
         return JsondUtils.decode(jsond);
     }
 
@@ -407,24 +409,26 @@ public class JtUtil {
         return new ByteArrayInputStream(str.getBytes("UTF-8"));
     }
 
+    Options oNodeOptions = Options.of(Feature.Node_ToStringUseJson);
+
     @Note("Object转为ONode")
     public ONode oNode(Object obj) throws Exception {
         if (obj == null) {
-            return new ONode();
+            return new ONode(oNodeOptions);
         } else {
             if (obj instanceof String) {
                 String tmp = ((String) obj).trim();
 
                 if (tmp.length() == 0) {
-                    return new ONode();
+                    return new ONode(oNodeOptions);
                 }
 
                 if (tmp.startsWith("{")) {
-                    return ONode.ofJson(tmp);
+                    return ONode.ofJson(tmp, oNodeOptions);
                 }
             }
 
-            return ONode.ofBean(obj);
+            return ONode.ofBean(obj, oNodeOptions);
         }
     }
 
@@ -621,5 +625,4 @@ public class JtUtil {
     public String unGzip(String str) throws IOException {
         return GzipUtils.unGZip(str);
     }
-
 }
