@@ -2,9 +2,7 @@ package org.noear.luffy.dso;
 
 import org.noear.okldap.LdapClient;
 import org.noear.okldap.LdapSession;
-import org.noear.snack4.Feature;
 import org.noear.snack4.ONode;
-import org.noear.snack4.Options;
 import org.noear.solon.Solon;
 import org.noear.solon.Utils;
 import org.noear.solon.annotation.Note;
@@ -409,26 +407,24 @@ public class JtUtil {
         return new ByteArrayInputStream(str.getBytes("UTF-8"));
     }
 
-    Options oNodeOptions = Options.of(Feature.Node_ToStringUseJson);
-
     @Note("Object转为ONode")
     public ONode oNode(Object obj) throws Exception {
         if (obj == null) {
-            return new ONode(oNodeOptions);
+            return new ONode();
         } else {
             if (obj instanceof String) {
                 String tmp = ((String) obj).trim();
 
                 if (tmp.length() == 0) {
-                    return new ONode(oNodeOptions);
+                    return new ONode();
                 }
 
                 if (tmp.startsWith("{")) {
-                    return ONode.ofJson(tmp, oNodeOptions);
+                    return ONode.ofJson(tmp);
                 }
             }
 
-            return ONode.ofBean(obj, oNodeOptions);
+            return ONode.ofBean(obj);
         }
     }
 
