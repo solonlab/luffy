@@ -49,12 +49,12 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
 
-        <wood.version>1.4.0</wood.version>
+        <wood.version>1.4.1</wood.version>
         <snack3.version>3.2.139</snack3.version>
-        <snack4.version>4.0.6-SNAPSHOT</snack4.version>
+        <snack4.version>4.0.6</snack4.version>
 
-        <mongox.version>1.1.0</mongox.version>
-        <redisx.version>1.8.0</redisx.version>
+        <mongox.version>1.1.1</mongox.version>
+        <redisx.version>1.8.1</redisx.version>
 
         <okhttp.version>3.14.9</okhttp.version>
 
