@@ -6,6 +6,7 @@ import org.noear.solon.SolonApp;
 import org.noear.solon.Utils;
 import org.noear.solon.core.*;
 import org.noear.luffy.utils.TextUtils;
+import org.noear.solon.core.util.MultiMap;
 import org.noear.wood.ext.Act0;
 
 public class Luffy {
@@ -29,7 +30,7 @@ public class Luffy {
         Luffy._onLoadEvent = onLoadEvent;
 
         //0.构建参数
-        NvMap xarg = NvMap.from(args);
+        MultiMap<String> xarg = MultiMap.from(args);
 
         //1.获取扩展目录
         String extend = InitUtil.tryInitExtend(xarg);

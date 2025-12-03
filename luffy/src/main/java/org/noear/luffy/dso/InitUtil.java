@@ -3,7 +3,7 @@ package org.noear.luffy.dso;
 import org.noear.solon.SolonApp;
 import org.noear.luffy.Config;
 import org.noear.luffy.utils.*;
-import org.noear.solon.core.NvMap;
+import org.noear.solon.core.util.MultiMap;
 import org.noear.solon.core.util.ResourceUtil;
 import org.noear.wood.DbContext;
 
@@ -271,7 +271,7 @@ public class InitUtil {
         System.out.println("Complete _core loading");
     }
 
-    public static String tryInitExtend(NvMap xarg) {
+    public static String tryInitExtend(MultiMap<String> xarg) {
         String extend = xarg.get("extend");
         if (extend == null) {
             extend = do_buildRoot();
