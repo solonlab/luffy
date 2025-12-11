@@ -6,6 +6,26 @@ import java.util.Date;
 
 //时间间隔
 public class Timespan {
+    public static Timespan create(Date date2){
+        return new Timespan(date2);
+    }
+
+    public static Timespan create(Date date1, Date date2){
+        return new Timespan(date1, date2);
+    }
+
+    public static Timespan create(Datetime date2) {
+        return new Timespan(date2);
+    }
+
+    public static Timespan create(Datetime date1, Datetime date2) {
+        return new Timespan(date1, date2);
+    }
+
+    public static Timespan create(long time1, long time2) {
+        return new Timespan(time1, time2);
+    }
+
     private long interval = 0;
 
     public Timespan(Date date2) {
