@@ -5,6 +5,10 @@ import org.noear.solon.annotation.Note;
 public class Timecount {
     private long start_time;
 
+    public static Timecount create() {
+        return new Timecount();
+    }
+
     @Note("开始计时")
     public Timecount start() {
         start_time = System.currentTimeMillis();
