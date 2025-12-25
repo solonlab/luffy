@@ -1,8 +1,6 @@
 package org.noear.localjt;
 
-import org.noear.localjt.dso.WebShell;
-import org.noear.snack4.Options;
-import org.noear.snack4.Feature;
+//import org.noear.localjt.dso.WebShell;
 import org.noear.solon.Solon;
 import org.noear.luffy.Luffy;
 import org.noear.luffy.dso.JtUtilEx;
@@ -91,11 +89,11 @@ public class LocalJtApp {
             title = "LocalJt";
         }
 
-        if ("0".equals(model)) {
-            new Thread(() -> {
-                WebShell.start(args);
-            }).start();
-        } else {
+//        if ("0".equals(model)) {
+//            new Thread(() -> {
+//                WebShell.start(args);
+//            }).start();
+//        } else {
             //尝试用本地浏览器打开
             try {
                 if (java.awt.Desktop.isDesktopSupported()) {
@@ -114,7 +112,7 @@ public class LocalJtApp {
             } catch (Throwable e) {
                 System.err.println("[Luffy] Desktop startup is not supported");
             }
-        }
+//        }
     }
 
     /**
