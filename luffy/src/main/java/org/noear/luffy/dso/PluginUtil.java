@@ -277,7 +277,7 @@ public class PluginUtil {
             json = GzipUtils.unGZip(json);
         }
 
-        ONode data = ONode.ofJson(json, Feature.Read_AutoType);
+        ONode data = ONode.ofJson(json);
         if (data.get("code").getInt() != 1) {
             return false;
         }
@@ -307,7 +307,7 @@ public class PluginUtil {
             db().table("a_config").where("tag=? AND is_exclude=0",tag).delete();
 
             String pcfg = doRepMap(Base64Utils.decode(p_config));
-            List<Map<String, Object>> pcfg_d = ONode.deserialize(pcfg, List.class, Feature.Read_AutoType);
+            List<Map<String, Object>> pcfg_d = ONode.deserialize(pcfg, List.class);
 
             for (Map<String, Object> m : pcfg_d) {
                 String name = (String) m.get("name");
@@ -357,7 +357,7 @@ public class PluginUtil {
             db().table("a_menu").where("tag=? AND is_exclude=0", tag).delete();
 
             String pmenu = doRepMap(Base64Utils.decode(p_menu));
-            List<Map<String, Object>> pmenu_d = ONode.deserialize(pmenu, List.class, Feature.Read_AutoType);
+            List<Map<String, Object>> pmenu_d = ONode.deserialize(pmenu, List.class);
 
             if (pmenu_d != null) {
                 for (Map<String, Object> m : pmenu_d) {
@@ -380,7 +380,7 @@ public class PluginUtil {
             db().table("a_file").where("tag=? AND is_exclude=0",tag).delete();
 
             String pfile = doRepMap(Base64Utils.decode(p_file));
-            List<Map<String, Object>> pfile_d = ONode.deserialize(pfile, List.class, Feature.Read_AutoType);
+            List<Map<String, Object>> pfile_d = ONode.deserialize(pfile, List.class);
 
             if(pfile_d != null) {
                 for (Map<String, Object> m : pfile_d) {
@@ -404,7 +404,7 @@ public class PluginUtil {
             db().table("a_image").whereEq("tag",tag).delete();
 
             String pimg = doRepMap(Base64Utils.decode(p_img));
-            List<Map<String, Object>> pimg_d = ONode.deserialize(pimg, List.class, Feature.Read_AutoType);
+            List<Map<String, Object>> pimg_d = ONode.deserialize(pimg, List.class);
 
             if (pimg_d != null) {
                 for (Map<String, Object> m : pimg_d) {

@@ -112,7 +112,7 @@ public class JtUtil {
                         //
                         // json
                         //
-                        Map<String, Object> tmp2 = ONode.ofJson(cfg, Feature.Read_AutoType).toBean(Map.class);
+                        Map<String, Object> tmp2 = ONode.ofJson(cfg).toBean(Map.class);
                         tmp2.forEach((k, v) -> {
                             _map.put(k, v.toString());
                         });
