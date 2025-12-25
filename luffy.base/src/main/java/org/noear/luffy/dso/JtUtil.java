@@ -2,6 +2,7 @@ package org.noear.luffy.dso;
 
 import org.noear.okldap.LdapClient;
 import org.noear.okldap.LdapSession;
+import org.noear.snack4.Feature;
 import org.noear.snack4.ONode;
 import org.noear.solon.Solon;
 import org.noear.solon.Utils;
@@ -111,7 +112,7 @@ public class JtUtil {
                         //
                         // json
                         //
-                        Map<String, Object> tmp2 = (Map<String, Object>) ONode.ofJson(cfg).toBean();
+                        Map<String, Object> tmp2 = ONode.ofJson(cfg, Feature.Read_AutoType).toBean(Map.class);
                         tmp2.forEach((k, v) -> {
                             _map.put(k, v.toString());
                         });
